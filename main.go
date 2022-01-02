@@ -8,37 +8,31 @@ import (
 	"strings"
 )
 
-func variables(){
-	fmt.Println("hello how are you");
-	fmt.Println("variables can be used as follows");
-	var number int = 10;
-	fmt.Println(number)
-	var name string= "sandeep";
-	fmt.Println(name)
-}
-
-func inputOutput(){
-	reader := bufio.NewReader(os.Stdin);
-	input, _ := reader.ReadString('\n');
-	value, _ := strconv.Atoi(input)
-	fmt.Println(value);
-}
-
-func additionOfTwoNumbers(){
-	/// will also try if else / conditonal statements here
-	reader := bufio.NewReader(os.Stdin);
-
-	number1, _ := reader.ReadString('\n');
-	num, err := strconv.ParseFloat(strings.TrimSpace(number1), 64);
-	if err != nil {
-		fmt.Println(err);
-
-	}
-	fmt.Println(num + 1);
-}
-
 func main(){
-	variables();
-	inputOutput();
-	additionOfTwoNumbers();
+
+	fmt.Println("welcome to pizza app");
+	fmt.Print("please rate the pizza between 1 and 5 = ")
+
+	reader := bufio.NewReader(os.Stdin)
+	data , err := reader.ReadString('\n');
+	if err != nil{
+		
+	}else{
+		data = strings.TrimSpace(data)
+	}
+	
+	data2 , err := strconv.ParseFloat(data, 64);
+
+	if err != nil{
+		fmt.Print("something went wrong");
+	}else{
+		value := data2+1
+		fmt.Println(value)
+		
+	}
+	
+
+	
+
+
 }
