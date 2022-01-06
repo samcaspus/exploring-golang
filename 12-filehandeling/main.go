@@ -19,7 +19,6 @@ func main(){
 	}
 	file.WriteString(content)
 	
-
 	data, err := ioutil.ReadFile(file.Name())
 	if err!=nil{
 		fmt.Println("something went wrong")
